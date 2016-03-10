@@ -1,6 +1,6 @@
 var ul = document.createElement('ul');
 document.getElementById("hourly").appendChild(ul);
-$.getJSON("http://api.wunderground.com/api/a8c6c1abaa4a5040/geolookup/hourly/q/CA/San_Francisco.json", function (resp)
+$.getJSON("http://api.wunderground.com/api/a8c6c1abaa4a5040/geolookup/hourly/q/"+ state + "/" + city + ".json", function (resp)
 {
     $.each(resp.hourly_forecast, function ()
     {

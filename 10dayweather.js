@@ -1,11 +1,21 @@
 var ul1 = document.createElement('ul1');
 document.getElementById("10day").appendChild(ul1);
-$.getJSON("http://api.wunderground.com/api/a8c6c1abaa4a5040/geolookup/forecast10day/q/CA/San_Francisco.json", function (resp)
+$.getJSON("http://api.wunderground.com/api/a8c6c1abaa4a5040/geolookup/forecast10day/q/"+ state + "/" + city + ".json", function (resp)
 {
-    $.each(resp.forecast.simpleforecast.forecastday, function ()
+    try
     {
-        logDay(this);
-    });
+        $.each(resp.forecast.simpleforecast.forecastday, function ()
+        {
+            logDay(this);
+        });
+    }
+    catch (error)
+    {
+            alert("That was an invalid location");
+            $('html, body').css({
+            'overflow': 'hidden',
+            'height': '100%'});
+    }
 });
 
 function logDay(obj)

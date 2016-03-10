@@ -3,7 +3,7 @@ document.getElementById("records").appendChild(ul2);
 jQuery(document).ready(function ($) 
 {
     $.ajax({
-        url: "http://api.wunderground.com/api/a8c6c1abaa4a5040/geolookup/almanac/q/CA/San_Francisco.json",
+        url: "http://api.wunderground.com/api/a8c6c1abaa4a5040/geolookup/almanac/q/"+ state + "/" + city + ".json",
         dataType: "jsonp",
         success: function (parsed_json)
         {
@@ -15,6 +15,7 @@ jQuery(document).ready(function ($)
     
     function grab(obj)
             {
+                document.getElementById("city_name").innerHTML = obj['location']['city'];
                 var normHigh = obj['almanac']['temp_high']['normal']['F'];
                 var recHigh = obj['almanac']['temp_high']['record']['F'];
                 var recHighYear = obj['almanac']['temp_high']['recordyear'];
