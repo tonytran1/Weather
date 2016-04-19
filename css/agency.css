@@ -4,14 +4,14 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-#fa-custom{
+#fa-custom {
     display: inline-block;
     -moz-border-radius: 100px;
     -webkit-border-radius: 100px;
     border-radius: 100px;
-    -moz-box-shadow: 2px 2px 2px #4d4d4d;
-    -webkit-box-shadow: 2px 2px 2px #4d4d4d;
-    box-shadow: px 2px 2px #4d4d4d;
+    -moz-box-shadow: 2px 2px 2px 2px black;
+    -webkit-box-shadow: 2px 2px 2px 2px black;
+    box-shadow: 2px 2px 2px 2px black;
 }
 
 .collapsing {
@@ -402,7 +402,7 @@ section h2.section-heading {
     Kaushan+Script
     margin-top: 0;
     margin-bottom: 15px;
-    font-size: 50px;
+    font-size: 60px;
 }
 
 section h4.date {
