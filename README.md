@@ -1,3 +1,2 @@
 # Weather
-Bootstrap template used:
-http://startbootstrap.com/template-overviews/agency/
+This website is used to practice API usage and UI design.
