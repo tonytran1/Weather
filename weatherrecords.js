@@ -3,7 +3,7 @@ document.getElementById("records").appendChild(ul2);
 jQuery(document).ready(function ($) 
 {
     $.ajax({
-        url: "http://api.wunderground.com/api/a8c6c1abaa4a5040/geolookup/almanac/q/"+ state + "/" + city + ".json",
+        url: "http://api.wunderground.com/api/a8c6c1abaa4a5040/geolookup/almanac/q//" + city + ".json",
         dataType: "jsonp",
         success: function (parsed_json)
         {
