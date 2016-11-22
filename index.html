@@ -1,237 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <title>Weather</title>
-
-        <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="css/agency.css" rel="stylesheet">
-
-        <!-- Custom Fonts -->
-        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-        <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-    </head>
-
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Weather</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
     <body id="page-top" class="index">
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="page-scroll" href="#page-top"><span class="fa-stack fa-2x">                        
-                        <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-home fa-stack-1x fa-inverse"></i></span></a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="hidden">
-                            <a href="#page-top"></a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#services"><b>Services</b></a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#hourly"><b>Hourly</b></a>
-                        </li>
-                        <li>
-                            <form style="background: transparent; margin: 10px;">
-                                <input type="text" id="city" style="color: black; font-weight: bold;border-radius: 5px;" placeholder=" City / Zip Code" size="22" />
-                                <button class="btn btn-primary btn-sm" style="border-radius: 4px" onclick="onClick()">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                                
-                            </form>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#10day"><b>10 Day Forecast</b></a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#records"><b>Weather Records</b></a>
-                        </li>
-                      
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container-fluid -->
-        </nav>
-        <!-- Header -->
-        <header>
-            <div class="container">
-                <div class="intro-text">
-                    <div class="intro-heading"><li style="list-style-type: none" id="city_name"></li><br>Weather</div>
-                    <a href="#services" class="page-scroll btn btn-xl btn-primary"><b>Tell Me More</b></a>
-                </div>
-            </div>
-        </header>
-
-        <!-- Services Section -->
-        <section id="services" class="statsBG">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading"><b>Services</b></h2>
-                        <h3 class="section-subheading text-muted"><b>These are the services that the website offers</b></h3>
-                    </div>
-                </div>
-                <div class="row text-center">
-                    <div class="col-md-4">                   
-                        <a class="page-scroll" href="#hourly">
-                            <div class="hover">
-                                <span class="fa-stack fa-4x">                        
-                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                    <i class="fa fa-cloud fa-stack-1x fa-inverse"></i>
-                                </span> 
-                            </div>
-                        </a>
-
-                        <h4 class="service-heading">Hourly</h4>
-                        <p class="text-muted"><b>The ability to predict the next 36 hours worth of weather!</b></p>
-                    </div>
-                    <div class="col-md-4">
-                        <a class="page-scroll" href="#10day">
-                            <div class="hover">
-                                <span class="fa-stack fa-4x">
-                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                    <i class="fa fa-sun-o fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </div>
-                        </a>
-                        <h4 class="service-heading"><b>10 Day Forecast</b></h4>
-                        <p class="text-muted"><b>Weather for the next 10 days.</b></p>
-                    </div>
-                    <div class="col-md-4">
-                        <a class="page-scroll" href="#records">
-                            <div class="hover">
-                                <span class="fa-stack fa-4x">
-                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                    <i class="fa fa-bar-chart fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </div>
-                        </a>
-                        <h4 class="service-heading"><b>Weather Records</b></h4>
-                        <p class="text-muted"><b>Basic weather history for today (<script src="date.js"></script>).</b></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Hourly Weather Section -->
-        <section id="hourly" class="hourlyBG">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading" style="text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black"><b><font color="#fec503">Hourly</font></b></h2>
-                        <h3 class="section-subheading text-muted"><b>Weather for the next 36 hours.</b></h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- 10 Day Forecast Section -->
-        <section id="10day" class="dayBG">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading" style="text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black"><b><font color="#fec503">10 Day Forecast</font></b></h2>
-                        <h3 class="section-subheading text-muted"><b>Prediction of the next 10 days</b></h3>
-                    </div>
-                </div>
-                <div class="row">
-
-                </div>
-            </div>
-
-        </section>
-
-        <!-- records section -->
-        <section id="records" class ="statsBG">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading"><b>Weather Records</b></h2>
-                        <h3 class="section-subheading text-muted"><b>Weather facts about today</b></h3>
-                        <h4 class="date"><script src="datename.js"></script><br><br></h4>
-                    </div>
-                </div>  
-                <div class="row">
-
-                </div>
-            </div>
-        </section>
-                                    
-        <footer>                        
-            <div class="container">                         
-                <div class="row">                       
-                    <div class="col-md-4">   
-                        <span class="copyright"><b>Thank you for using!</b></span>
-                    </div>
-                    <div class="col-md-4">  
-                    </div>     
-                </div>  
-            </div> 
-        </footer>
-        
-        <!-- Dialogs -->
-        <div id="invalid" class="dialog" title="Location" style="display:none; text-align:center">
-            <p><b>Could Not Find Exact Match.</b></p>
-            <p><b>Try Using Zip Code or Adding the State to Search.</b></p>
-            <button class="form-control btn btn-primary" onclick="closeDialog()">OK</button>
+      <!-- Navigation -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="page-scroll" href="#page-top"><span class="fa-stack fa-2x">
+            <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-home fa-stack-1x fa-inverse"></i></span></a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="hidden">
+                <a href="#page-top"></a>
+              </li>
+              <li>
+                <a class="page-scroll" href="#services"><b>Services</b></a>
+              </li>
+              <li>
+                <a class="page-scroll" href="#hourly"><b>Hourly</b></a>
+              </li>
+              <li>
+                <form style="background: transparent; margin: 10px;">
+                  <input type="text" id="city" style="color: black; font-weight: bold;border-radius: 5px;" placeholder=" City / Zip Code" size="22" />
+                  <button class="btn btn-primary btn-sm" style="border-radius: 4px" onclick="onClick()">
+                    <span class="glyphicon glyphicon-search"></span>
+                  </button>
+                </form>
+              </li>
+              <li>
+                <a class="page-scroll" href="#10day"><b>10 Day Forecast</b></a>
+              </li>
+              <li>
+                <a class="page-scroll" href="#records"><b>Weather Records</b></a>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-heading"><li style="list-style-type: none" id="city_name"></li><br>Weather</div>
+          <a href="#services" class="page-scroll btn btn-xl btn-primary"><b>Tell Me More</b></a>
         </div>
+      </div>
+    </header>
 
-                                    <!-- jQuery -->
-                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-                                    
-                                    <!-- jQuery UI -->
-                                    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-                                    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-        
-                                    <!-- Bootstrap Core JavaScript -->
-                                    <script src="js/bootstrap.min.js"></script>
-                                        
+    <!-- Services Section -->
+    <section id="services" class="statsBG">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading"><b>Services</b></h2>
+            <h3 class="section-subheading text-muted"><b>These are the services that the website offers</b></h3>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-4">
+            <a class="page-scroll" href="#hourly">
+              <div class="hover">
+                <span class="fa-stack fa-4x">
+                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                  <i class="fa fa-cloud fa-stack-1x fa-inverse"></i>
+                </span>
+              </div>
+            </a>
+            <h4 class="service-heading">Hourly</h4>
+            <p class="text-muted"><b>The ability to predict the next 36 hours worth of weather!</b></p>
+          </div>
+          <div class="col-md-4">
+            <a class="page-scroll" href="#10day">
+              <div class="hover">
+                <span class="fa-stack fa-4x">
+                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                  <i class="fa fa-sun-o fa-stack-1x fa-inverse"></i>
+                </span>
+              </div>
+            </a>
+            <h4 class="service-heading"><b>10 Day Forecast</b></h4>
+            <p class="text-muted"><b>Weather for the next 10 days.</b></p>
+          </div>
+          <div class="col-md-4">
+            <a class="page-scroll" href="#records">
+              <div class="hover">
+                <span class="fa-stack fa-4x">
+                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                  <i class="fa fa-bar-chart fa-stack-1x fa-inverse"></i>
+                </span>
+              </div>
+            </a>
+            <h4 class="service-heading"><b>Weather Records</b></h4>
+            <p class="text-muted"><b>Basic weather history for today (<script src="js/date.js"></script>).</b></p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                                    <!-- Plugin JavaScript -->
-                                    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-                                    <script src="js/classie.js"></script>
-                                    <script src="js/cbpAnimatedHeader.js"></script>
-                                    
-                                    <!-- Custom Theme JavaScript -->
-                                    <script src="js/agency.js"></script>
-
-                                    <!-- Weather API -->  
-                                    <script src="changecity.js"></script>
-                                    <script src="hourlyweather.js"></script>
-                                    <script src="10dayweather.js"></script>
-                                    <script src="weatherrecords.js"></script>
-                                    <script src="dialog.js"></script>
-                                    </body>
-
-                                    </html>
+    <!-- Hourly Weather Section -->
+    <section id="hourly" class="hourlyBG">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading" style="text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black"><b><font color="#fec503">Hourly</font></b></h2>
+            <h3 class="section-subheading text-muted"><b>Weather for the next 36 hours.</b></h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 10 Day Forecast Section -->
+    <section id="10day" class="dayBG">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading" style="text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black"><b><font color="#fec503">10 Day Forecast</font></b></h2>
+            <h3 class="section-subheading text-muted"><b>Prediction of the next 10 days</b></h3>
+          </div>
+        </div>
+        <div class="row"></div>
+      </div>
+    </section>
+    <!-- Records section -->
+    <section id="records" class ="statsBG">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading"><b>Weather Records</b></h2>
+            <h3 class="section-subheading text-muted"><b>Weather facts about today</b></h3>
+            <h4 class="date"><script src="js/datename.js"></script><br><br></h4>
+          </div>
+        </div>
+        <div class="row"></div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright"><b>Thank you for using!</b></span>
+          </div>
+          <div class="col-md-4">
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Dialogs -->
+    <div id="invalid" class="dialog" title="Location" style="display:none; text-align:center">
+      <p><b>Could Not Find Exact Match.</b></p>
+      <p><b>Try Using Zip Code or Adding the State to Search.</b></p>
+      <button class="form-control btn btn-primary" onclick="closeDialog()">OK</button>
+    </div>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+    <!-- Weather API -->
+    <script src="weather/changeCity.js"></script>
+    <script src="weather/hourlyWeather.js"></script>
+    <script src="weather/10DayWeather.js"></script>
+    <script src="weather/weatherRecords.js"></script>
+    <script src="weather/dialog.js"></script>
+  </body>
+</html>
